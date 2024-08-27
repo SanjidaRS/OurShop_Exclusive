@@ -1,0 +1,33 @@
+/* html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background: linear-gradient(135deg, #f3e5f5, #ce93d8);
+} */
+
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background: linear-gradient(135deg, #e0bbe4, #cbaacb);
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
