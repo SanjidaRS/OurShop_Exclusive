@@ -4,9 +4,9 @@ import { productMap } from "../../lib/productMap";
 import { useState } from "react";
 import Footer from "../components/Footer";
 
-function ProductList({ products }) {
+function ProductList() {
   const count = Object.keys(productMap).length;
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const load = async () => {
     const response = await fetch("/api/product");
@@ -22,9 +22,9 @@ function ProductList({ products }) {
         </button>
         <br />
         <br />
-        {/* <button onClick={load} className={styles.loadButton}>
+        <button onClick={load} className={styles.loadButton}>
           Load Products
-        </button> */}
+        </button>
         <div className={styles.productGrid}>
           {products.map((product) => {
             return (
@@ -66,26 +66,3 @@ export default ProductList;
 //   }
 // }
 
-export async function getStaticProps() {
-  let products = [];
-
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/product`
-    );
-    if (!response.ok) {
-      throw new Error("Failed to fetch products");
-    }
-    products = await response.json();
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    // Handle error, or use fallback data
-  }
-
-  return {
-    props: {
-      products,
-    },
-    revalidate: 10, // In case you use Incremental Static Regeneration (ISR)
-  };
-}
